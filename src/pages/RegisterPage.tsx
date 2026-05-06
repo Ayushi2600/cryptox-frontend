@@ -21,6 +21,7 @@ export default function RegisterPage({ onSwitch }: Props) {
     try {
       const res = await authAPI.register(email, username, password);
       setUser(res.data.user, res.data.token);
+      localStorage.setItem('token', res.data.token);
     } catch (err: any) {
       setError(err.response?.data?.message || 'Registration failed');
     } finally {

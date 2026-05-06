@@ -151,6 +151,7 @@ export default function Navbar() {
             <button
               onClick={async () => {
                 await authAPI.logout();
+                localStorage.removeItem('token');
                 logout();
               }}
               className="text-xs text-[#64748b] hover:text-red-400 transition-colors"

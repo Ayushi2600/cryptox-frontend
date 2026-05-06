@@ -20,6 +20,7 @@ export default function LoginPage({ onSwitch }: Props) {
     try {
       const res = await authAPI.login(email, password);
       setUser(res.data.user, res.data.token);
+      localStorage.setItem('token', res.data.token);
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed');
     } finally {
