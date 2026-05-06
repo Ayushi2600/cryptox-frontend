@@ -7,7 +7,7 @@ import { Balance } from "../../types";
 import { useToast } from "../../context/Toastcontext";
 
 export default function OrderForm() {
-  const { selectedSymbol, balances, setMyOrders, myOrders } =
+  const { selectedSymbol, balances, setMyOrders } =
     useExchangeStore();
   const toast = useToast();
   const [side, setSide] = useState<"BUY" | "SELL">("BUY");
